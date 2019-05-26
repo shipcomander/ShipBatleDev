@@ -21,7 +21,6 @@ let motor = {
 //Проверка причины инициализации функции (Игрок или бот).
         switch(life) {
         case true:
-        console.log(1)
         if(event.target.className === "shipblock" ) {
         event.target.className = "explosion"
         this.stata = this.stata + 1;
@@ -31,7 +30,7 @@ let motor = {
         name[0].classList.remove("youtourn");
         name[1].classList.add("youtourn");
         guard.style.zIndex = 100;
-        setTimeout(this.chose(false), 1100);
+        setTimeout( ()=> this.chose(false), 1100);
         } 
     
         for (let n = 0; n < shootingStar.children.length; n++) {
@@ -45,12 +44,12 @@ let motor = {
         }
         break;
         case false:
-        console.log(2)
         if( randomr.className === "shipblock" ) {
             randomr.className = "explosion"
-            setTimeout(this.chose(false), 1100);
+            setTimeout( ()=> this.chose(false), 1100);
         }
         else if ( randomr.className === "void" ) {
+            console.log(1)
             randomr.className = "miss"
             name[0].classList.add("youtourn");
             name[1].classList.remove("youtourn");
